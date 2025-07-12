@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Di-vidend | DeFi Savings Platform</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <img src="images/logo.png" alt="Di-vidend Logo" class="logo" />
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <!-- Welcome Modal -->
+<div id="welcome-modal" class="modal">
+  <div class="modal-content">
+    <h2>Welcome to Di-vidend!</h2>
+    <p>Get started by connecting your Sui wallet to begin saving with DeFi power.</p>
+    <button id="modal-close">Got it!</button>
+  </div>
+</div>
+
+<!-- Terms of Service Consent Modal -->
+<div id="tos-modal" class="modal">
+  <div class="modal-content">
+    <h3>Terms of Service</h3>
+    <p>Please agree to our terms before using Di-vidend.</p>
+    <button id="accept-tos">Accept</button>
+  </div>
+</div>
+
+  <section id="home" class="hero">
+    <div class="container">
+      <h1 data-aos="fade-up">Grow Your Crypto with Di-vidend</h1>
+      <p data-aos="fade-up" data-aos-delay="200">
+        A decentralized savings app built on the Sui blockchain — designed for students, businesses, and individuals.
+      </p>
+      <a href="#about" class="cta-button" data-aos="zoom-in" data-aos-delay="400">Get Started</a>
+    </div>
+  </section>
+
+  <section id="about" class="about-creator" data-aos="fade-up">
+    <h2>About the Creator</h2>
+    <p>
+      Hi, I’m <strong>Cyril Okoh</strong>, the creator of Di-vidend — a DeFi savings app designed to empower people with secure, interest-bearing crypto accounts. This platform helps you fight inflation and grow wealth without relying on traditional banks.
+    </p>
+  </section>
+  <!-- Features Section -->
+<section id="features" class="features-section">
+  <div class="container">
+    <!-- User Dashboard -->
+<section id="dashboard" class="dashboard-section">
+  <div class="container">
+    <section id="finance-tools" class="finance-tools-section">
+  <div class="container">
+
+    <h3>Financial Analytics</h3>
+
+    <!-- Earnings Dashboard -->
+    <div class="card">
+      <h4>Earnings Overview</h4>
+      <canvas id="earningsPieChart" height="200"></canvas>
+      <canvas id="earningsBarChart" height="200"></canvas>
+    </div>
+
+    <!-- Interest History -->
+    <div class="card">
+      <h4>Interest History</h4>
+      <table id="interest-history" class="history-table">
+        <thead>
+          <tr><th>Date</th><th>Amount (USDC)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2025-07-01</td><td>5.00</td></tr>
+          <tr><td>2025-07-02</td><td>5.15</td></tr>
+          <tr><td>2025-07-03</td><td>5.30</td></tr>
+        </tbody>
+      </table>
+      <button id="exportCSV">Export CSV</button>
+    </div>
+
+    <!-- Savings Goal Tracker -->
+    <div class="card">
+      <h4>Savings Goal Tracker</h4>
+      <label for="goalAmount">Goal Amount (USDC):</label>
+      <input type="number" id="goalAmount" min="0" step="0.01" />
+      <button id="setGoalBtn">Set Goal</button>
+      <p id="goalStatus"></p>
+    </div>
+
+    <!-- Staking Pool Visualizer -->
+    <div class="card">
+      <h4>Staking Pool Visualizer</h4>
+      <canvas id="stakingPoolChart" height="200"></canvas>
+    </div>
+
+    <!-- SUI Gas Estimator -->
+    <div class="card">
+      <h4>SUI Gas Fee Estimator</h4>
+      <label for="gasTxType">Transaction Type:</label>
+      <select id="gasTxType">
+        <option value="transfer">Transfer</option>
+        <option value="withdraw">Withdraw</option>
+        <option value="deposit">Deposit</option>
+      </select>
+      <button id="estimateGasBtn">Estimate Gas</button>
+      <p id="gasEstimateResult"></p>
+    </div>
+
+  </div>
+</section>
+
+    <!-- User Profile -->
+    <div class="card" data-aos="fade-up">
+      <h3>Welcome, Cyril</h3>
+      <img src="images/avatar.png" alt="User Avatar" class="avatar">
+      <p>Wallet: <span id="user-wallet">0xA1b2...eD45</span></p>
+      <div class="wallet-controls">
+  <button id="connect-wallet">Connect Wallet</button>
+  <button id="switch-account" disabled>Switch Account</button>
+  <div id="wallet-qr"></div>
+</div>
+
+<div id="avatar-drop-area" class="avatar-drop-area">
+  <p>Drag & drop your avatar here</p>
+  <input type="file" id="avatar-input" accept="image/*" hidden />
+</div>
+      <button onclick="logout()">Logout</button>
+    </div>
+    <!-- Terms & Smart Contract -->
+<section id="legal" class="legal-section">
+  <div class="container">
+    <h3>Transparency & Trust</h3>
+    <p>Di-vidend is fully decentralized and open-source. View our smart contract and legal terms below:</p>
+    <ul>
+      <li><a href="https://suiscan.xyz" target="_blank">🔗 View Smart Contract on Sui</a></li>
+      <li><a href="#terms">📄 Terms of Use</a></li>
+      <li><a href="#privacy">🔐 Privacy Policy</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Partners -->
+<section id="partners" class="partners-section">
+  <div class="container">
+    <h3>Our Partners</h3>
+    <div class="partner-logos">
+      <img src="sui.jpg" alt="Sui Logo" />
+      <img src="eth.jpg" alt="Ethereum Logo" />
+      <img src="cb.jpg" alt="Coinbase Logo" />
+    </div>
+  </div>
+</section>
+
+<!-- Roadmap -->
+<section id="roadmap" class="roadmap-section">
+  <div class="container">
+    <h3>Roadmap</h3>
+    <ul class="roadmap">
+      <li><strong>Q3 2025</strong> – Beta Launch on Sui</li>
+      <li><strong>Q4 2025</strong> – USDC Integration, PWA support</li>
+      <li><strong>Q1 2026</strong> – NFT Collateral & DAO Voting</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-section">
+  <div class="container">
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq">
+      <div class="faq-item">
+        <button class="faq-question">What is Di-vidend?</button>
+        <div class="faq-answer">A DeFi app that lets you save and grow crypto on Sui with interest.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is it safe?</button>
+        <div class="faq-answer">Yes, we’re built on audited smart contracts and you control your wallet keys.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Transaction History -->
+    <div class="card" data-aos="fade-up" data-aos-delay="100">
+      <h3>Transaction History</h3>
+      <ul id="tx-history">
+        <li>+50 USDC - Deposit (July 10)</li>
+        <li>-20 SUI - Transfer (July 9)</li>
+        <li>+5 USDC - Interest (July 8)</li>
+      </ul>
+    </div>
+
+    <!-- Notifications -->
+    <div class="card" data-aos="fade-up" data-aos-delay="200">
+      <h3>Notifications</h3>
+      <ul id="notifications">
+        <li>You’ve earned $2 in interest 🎉</li>
+        <li>Withdrawal request submitted</li>
+      </ul>
+    </div>
+
+    <!-- Transfer Section -->
+    <div class="card" data-aos="fade-up" data-aos-delay="300">
+      <h3>Transfer Funds</h3>
+      <form id="transfer-form">
+        <input type="text" placeholder="Recipient Wallet" required />
+        <select>
+          <option value="SUI">SUI</option>
+          <option value="USDC">USDC</option>
+        </select>
+        <input type="number" placeholder="Amount" required />
+        <button type="submit">Send</button>
+      </form>
+      <p id="transfer-msg"></p>
+    </div>
+
+  </div>
+</section>
+
+    <!-- Savings Calculator -->
+    <div class="feature-card" data-aos="fade-up">
+      <h3>Savings Calculator</h3>
+      <p>Estimate your crypto earnings with Di-vidend's compounding interest model.</p>
+      <form id="calc-form">
+        <input type="number" id="deposit" placeholder="Initial Deposit (USDC)" required>
+        <input type="number" id="duration" placeholder="Months" required>
+        <button type="submit">Calculate</button>
+      </form>
+      <p id="calc-result"></p>
+    </div>
+
+    <!-- Price Widget -->
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+      <h3>Live Price (Simulated)</h3>
+      <div class="price-widget">
+        <span>SUI: <strong id="sui-price">$0.78</strong></span>
+        <span>USDC: <strong>$1.00</strong></span>
+      </div>
+    </div>
+
+    <!-- Chart (Fake data) -->
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+      <h3>Growth Chart</h3>
+      <canvas id="growthChart" height="200"></canvas>
+    </div>
+
+    <!-- Walkthrough Tip -->
+    <div class="feature-card walkthrough" data-aos="fade-up" data-aos-delay="600" title="We’ll guide you step-by-step">
+      <h3>New User Guide</h3>
+      <p>Learn how to deposit, earn, and withdraw on Di-vidend.</p>
+      <button onclick="alert('Walkthrough coming soon!')">Start Tour</button>
+    </div>
+
+  </div>
+  <section id="marketing" class="marketing-section">
+  <div class="container">
+
+    <!-- Referral Link & QR -->
+    <div class="card">
+      <h4>Refer a Friend</h4>
+      <input type="text" id="referralLink" readonly />
+      <button id="generateReferral">Generate Referral Link</button>
+      <div id="referralQR"></div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="card">
+      <h4>Join Our Newsletter</h4>
+      <p>Stay updated on airdrops, updates, and rewards.</p>
+      <input type="email" id="newsletterEmail" placeholder="Enter your email" />
+      <button id="subscribeBtn">Subscribe</button>
+      <p id="newsletterStatus"></p>
+    </div>
+
+    <!-- Live X Feed -->
+    <div class="card">
+      <h4>Live Updates from X (formerly Twitter)</h4>
+      <blockquote class="twitter-tweet">
+        <a href="https://twitter.com/VIDEND_SUI"></a>
+      </blockquote>
+    </div>
+
+    <!-- AMA Countdown -->
+    <div class="card">
+      <h4>Next AMA Countdown</h4>
+      <p id="amaTimer">Loading...</p>
+    </div>
+
+    <!-- Blog Section -->
+    <div class="card">
+      <h4>Latest Blog Posts</h4>
+      <ul id="blog-posts">
+        <li><strong>🎉 Launch Day</strong> — Di-vidend soon launches on Sui! (July 1, 2025)</li>
+        <li><strong>💡 New Feature:</strong> NFT Collateral Now Live (July 10, 2025)</li>
+      </ul>
+    </div>
+
+    <!-- Testimonial Form -->
+    <div class="card">
+      <h4>Leave a Testimonial</h4>
+      <textarea id="testimonialText" rows="3" placeholder="Your experience..."></textarea>
+      <button id="submitTestimonial">Submit</button>
+      <p id="testimonialStatus"></p>
+    </div>
+
+  </div>
+</section>
+</section>
+<section id="security-trust" class="security-trust-section">
+  <div class="container">
+    <h3>Security & Trust</h3>
+
+    <div id="security-alerts" class="alerts"></div>
+
+    <ul>
+      <li><a href="docs/audit-report.pdf" target="_blank">📄 Download Audit Report (PDF)</a></li>
+      <li><a href="https://github.com/yourrepo/bug-bounty" target="_blank">🐞 Report a Bug / Bug Bounty Program</a></li>
+    </ul>
+
+    <div id="login-history" class="login-history">
+      <h4>Recent Login History</h4>
+      <ul id="login-list">
+        <!-- Populated by JS -->
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Di-vidend. All rights reserved.</p>
+    <p>
+      Contact:
+      <a href="mailto:cyrilokohceo@gmail.com">cyrilokohceo@gmail.com</a> |
+      <a href="tel:+2348143695219">+2348143695219</a> |
+      <a href="https://x.com/VIDEND_SUI" target="_blank">@VIDEND_SUI</a>
+    </p>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </footer>
+</body>
+</html>
