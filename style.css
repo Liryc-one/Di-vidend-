@@ -1,0 +1,616 @@
+/* Base dark theme setup */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+/* RESET & VIEWPORT */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Apply to all containers */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+/* Make images and canvas adapt */
+img, canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: #3fc1c9;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation */
+.navbar {
+  background-color: #121212;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  font-weight: 600;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 6rem 2rem;
+  background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+}
+
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  color: #ffffff;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 1rem auto;
+  font-size: 1.2rem;
+  color: #cccccc;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #3fc1c9;
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+/* About Creator */
+.about-creator {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #111;
+  border-top: 1px solid #222;
+}
+
+.about-creator h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #3fc1c9;
+}
+
+.about-creator p {
+  max-width: 800px;
+  margin: auto;
+  font-size: 1rem;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #0a0a0a;
+  color: #aaa;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #222;
+}
+.features-section {
+  padding: 4rem 2rem;
+  background-color: #0f0f0f;
+}
+
+.features-section .container {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  gap: 2rem;
+}
+
+.feature-card {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #000;
+  text-align: center;
+}
+
+.feature-card h3 {
+  color: #3fc1c9;
+  margin-bottom: 1rem;
+}
+
+.feature-card input,
+.feature-card button {
+  padding: 0.75rem;
+  margin: 0.5rem;
+  border-radius: 6px;
+  border: none;
+}
+
+.feature-card input {
+  width: 40%;
+  background-color: #222;
+  color: #fff;
+}
+
+.feature-card button {
+  background-color: #3fc1c9;
+  color: #000;
+  cursor: pointer;
+}
+
+.price-widget {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.2rem;
+}
+
+canvas {
+  background-color: #111;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.dashboard-section {
+  padding: 4rem 2rem;
+  background-color: #0d0d0d;
+}
+
+.dashboard-section .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  background-color: #1c1c1c;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #000;
+  text-align: center;
+}
+
+.card h3 {
+  color: #3fc1c9;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 2px solid #3fc1c9;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  color: #ccc;
+}
+
+.card ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.card form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.card input, .card select, .card button {
+  padding: 0.75rem;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+}
+
+.card button {
+  background-color: #3fc1c9;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+}
+body {
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+.hero h1 {
+  font-size: 2.2rem;
+}
+
+.hero p {
+  font-size: 1rem;
+}
+.card input, .card select, .card button,
+.feature-card input, .feature-card button {
+  width: 100%;
+  font-size: 1rem;
+}
+.features-section .container,
+.dashboard-section .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .features-section .container,
+  .dashboard-section .container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .feature-card input,
+  .feature-card select {
+    width: 40%;
+  }
+
+  .feature-card {
+    text-align: center;
+  }
+}
+.navbar .container {
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.legal-section, .roadmap-section, .partners-section, .faq-section {
+  padding: 4rem 2rem;
+  background-color: #111;
+  color: #ccc;
+  text-align: center;
+}
+
+.legal-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.legal-section li a {
+  color: #3fc1c9;
+  font-weight: 500;
+}
+
+.partner-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.partner-logos img {
+  width: 80px;
+  filter: brightness(1.2);
+}
+
+.roadmap {
+  list-style: none;
+  padding: 0;
+  color: #ddd;
+  text-align: left;
+  max-width: 600px;
+  margin: auto;
+}
+
+.faq .faq-item {
+  margin-bottom: 1rem;
+  text-align: left;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1rem;
+  background: none;
+  color: #3fc1c9;
+  font-weight: 600;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-answer {
+  padding: 1rem;
+  display: none;
+  color: #ccc;
+  background-color: #222;
+}
+/* Modal base styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1500;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #222;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  color: #eee;
+  text-align: center;
+}
+
+.modal-content button {
+  background-color: #3fc1c9;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Wallet Controls */
+.wallet-controls {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.wallet-controls button {
+  padding: 0.6rem 1.2rem;
+  background: #3fc1c9;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.wallet-controls button:disabled {
+  background: #666;
+  cursor: not-allowed;
+}
+
+/* QR code container */
+#wallet-qr {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Drag & drop avatar */
+.avatar-drop-area {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border: 2px dashed #3fc1c9;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #3fc1c9;
+  font-weight: 600;
+  user-select: none;
+}
+.avatar-drop-area.dragover {
+  background-color: #3fc1c933;
+}
+.finance-tools-section {
+  padding: 4rem 2rem;
+  background-color: #121212;
+  color: #ddd;
+}
+
+.finance-tools-section .container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.finance-tools-section .card {
+  background-color: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px #000;
+}
+
+.finance-tools-section h4 {
+  color: #3fc1c9;
+  margin-bottom: 1rem;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.history-table th, .history-table td {
+  border: 1px solid #333;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.history-table th {
+  background-color: #292929;
+}
+
+button {
+  background-color: #3fc1c9;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+.security-trust-section {
+  background-color: #121212;
+  color: #ddd;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.security-trust-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.security-trust-section ul li a {
+  color: #3fc1c9;
+  font-weight: 600;
+}
+
+.alerts {
+  margin: 1rem auto;
+  max-width: 600px;
+  min-height: 2rem;
+  color: #ff5555;
+  font-weight: 700;
+}
+
+.login-history {
+  margin-top: 2rem;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-history ul {
+  list-style: none;
+  padding-left: 1rem;
+  color: #ccc;
+}
+input, select, button {
+  max-width: 100%;
+  font-size: 1rem;
+}
+
+.card {
+  width: 100%;
+  overflow: hidden;
+}
+
+.history-table {
+  width: 100%;
+  overflow-x: auto;
+}
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .features-section .container,
+  .dashboard-section .container,
+  .finance-tools-section .container {
+    grid-template-columns: 1fr;
+  }
+
+  .wallet-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .faq .faq-question,
+  .card {
+    font-size: 1rem;
+  }
+
+  .partner-logos {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+button, input, select {
+  touch-action: manipulation;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+}
+.marketing-section {
+  padding: 4rem 2rem;
+  background-color: #111;
+  color: #eee;
+  text-align: center;
+}
+
+.marketing-section .container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+#referralLink, #newsletterEmail, textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
